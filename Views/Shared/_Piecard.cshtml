@@ -1,0 +1,26 @@
+﻿@model Pie
+<div class="col-sm-12 col-lg-4 col-md-4">
+    <div class="thumbnail">
+
+        <img src="@Model.ImgThumbUrl" alt="" />
+        <div class="caption">
+            <h3 class="pull-right">@Model.price.ToString("c")</h3>
+            <h3>
+                <a asp-controller="Pie" asp-action="Details" asp-route-id="@Model.pieId">@Model.Name</a>
+            </h3>
+
+            <p>@Model.ShortDescrption</p>
+
+        </div>
+        <div class="addToCart">
+            <p class="accordion-button">
+                <a class="btn btn-primary" 
+                   asp-controller="ShoppingCart"
+                   asp-action="AddToShoppingCart"
+                   asp-route-pieId="@Model.pieId"
+                   >Add To cart</a>
+            </p>
+        </div>
+
+    </div>
+</div>
